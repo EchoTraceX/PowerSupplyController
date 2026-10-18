@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only run against --evaluation-server, whose immutable fake device supplies stable readings.
+     Each question must be answered using capabilities AND status, without any write tool. -->
+<evaluation>
+    <qa_pair><question>同时检查权限和设备状态：现在是否允许 AI 开启这个已经连接的电源？只回答 yes 或 no。</question><answer>no</answer></qa_pair>
+    <qa_pair><question>对照能力限值和电源实际设定，设定电压距离 AI 允许上限还有多少伏？只返回数字。</question><answer>0</answer></qa_pair>
+    <qa_pair><question>对照能力限值和设备限流设定，目前还可以提高多少安培而不超过 AI 上限？只返回数字。</question><answer>0</answer></qa_pair>
+    <qa_pair><question>查询当前电压设定及允许最大限流，两者的乘积是多少瓦？这不是实际输出功率。只返回数字。</question><answer>2.5</answer></qa_pair>
+    <qa_pair><question>查询允许最高电压和实际测得的输出电压，差值是多少伏？只返回数字。</question><answer>5</answer></qa_pair>
+    <qa_pair><question>查询允许最大限流和当前实际输出电流，差值是多少安培？只返回数字。</question><answer>0.5</answer></qa_pair>
+    <qa_pair><question>通过能力查询和状态查询交叉检查，两者报告的是不是同一个设备型号代码？只回答 yes 或 no。</question><answer>yes</answer></qa_pair>
+    <qa_pair><question>对照当前输出、保护状态和 AI 权限：虽然设备没有保护且输出关闭，AI 现在能否修改设定？只回答 yes 或 no。</question><answer>no</answer></qa_pair>
+    <qa_pair><question>读取输入电压，并对照用户配置的最高 AI 输出电压，两者相差多少伏？只返回数字。</question><answer>19</answer></qa_pair>
+    <qa_pair><question>对照能力声明和设备读数：即使未来写入结果 confirmed=true，是否就能保证测得的负载端电压已稳定到设定值？只回答 yes 或 no。</question><answer>no</answer></qa_pair>
+</evaluation>
